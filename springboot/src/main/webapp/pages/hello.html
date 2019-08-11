@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div id="app">
+    helloworld
+    <!--<a href="/hello/h">点一下吧</a>-->
+    <p @click="getMes()">点击获取返回信息</p>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<!--<script src="../plugins/elementui/index.js"></script>-->
+<!--<script type="text/javascript" src="../js/jquery.min.js"></script>-->
+<script src="../js/axios-0.18.0.js"></script>
+<script>
+
+    var vue = new Vue ({
+        el:"#app",
+        data:{
+
+        },
+        created(){
+            axios.post("/hello").then((e)=>{
+                console.log(e);
+            })
+            axios.get("/json/addCar.json").then((e)=>{
+                console.log(e);
+            })
+            // console.log(json);
+        }
+    })
+</script>
+</html>

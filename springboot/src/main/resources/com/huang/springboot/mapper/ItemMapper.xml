@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huang.springboot.mapper.ItemMapper">
+    <insert id="add" parameterType="com.huang.springboot.pojo.Item">
+        <selectKey resultType="int" order="AFTER" keyProperty="iid">
+            select last_insert_id()
+        </selectKey>
+
+       insert into tab_item (mid,item_number,item_subtotal,oid) values
+        (#{mid},#{item_number},#{item_subtotal},#{oid})
+   </insert>
+</mapper>
